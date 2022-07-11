@@ -83,6 +83,8 @@ dependencies {
     //组件中依赖阿里路由编译框架
     annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
     annotationProcessor rootProject.ext.dependencies["glide-compiler"]
+
+    implementation rootProject.ext.dependencies["boost-multidex"]
     //宿主项目中判断组件是否需要独立运行
     if (isBuildModule.toBoolean()) {
         //组件独立运行时，宿主项目直接依赖基础库，避免编译错误
@@ -90,15 +92,5 @@ dependencies {
     } else {
         //主业务模块
         implementation project(':module-main')
-//        //首页模块
-//        implementation project(':module-home')
-//        //社区模块
-//        implementation project(':module-community')
-//        //更多模块
-//        implementation project(':module-more')
-//        //视频播放模块
-//        implementation project(':module-player')
-//        //用户模块
-//        implementation project(':module-user')
     }
 }
